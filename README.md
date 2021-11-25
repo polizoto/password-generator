@@ -1,6 +1,6 @@
 # password-generator
 
-This repo is a functionining password generator that can accept these user preferences in a password:
+This repo is a functioning password generator that can accept these user preferences in a password:
 
 - Upper and Lower case
 - Special Characters
