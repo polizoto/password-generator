@@ -30,6 +30,12 @@ header {
   color: hsl(206, 17%, 28%);
 }
 
+/* Make text wrap */
+
+header h1 {
+  overflow-wrap: break-word;
+}
+
 .card {
   background-color: hsl(0, 0%, 100%);
   border-radius: 5px;
@@ -48,6 +54,12 @@ header {
   width: 100%;
   background: #e7e9eb;
   height: 2px;
+}
+
+/* Make text wrap */
+
+.card-header h2 {
+  overflow-wrap: break-word;
 }
 
 .card-body {
