@@ -80,9 +80,9 @@ var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
 function writePassword() {
-  if (!length) {
+  // if (!length) {
     getLength(); 
-  }
+  // }
 
 // Call Preference function for different types of chracters and store as global variable
 
