@@ -16,3 +16,11 @@ This project demonstrates many common features in JavaScript programming:
 - logical operators: `=`, `&&`, `||`, `!` etc.
 - variable scope: global and local
 - functions
+
+## Screenshot
+
+![screenshot of password generator](/assets/images/password-screenshot.jpg)
+
+## Live Link
+
+[live application](https://polizoto.github.io/password-generator/)
