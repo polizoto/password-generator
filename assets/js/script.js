@@ -80,7 +80,9 @@ var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
 function writePassword() {
-getLength(); 
+  if (!length) {
+    getLength(); 
+  }
 
 // Call Preference function for different types of chracters and store as global variable
 
@@ -89,9 +91,16 @@ var lowerCase = getPreference("Lowercase Letters");
 var numbers = getPreference("Numbers");
 var specialCharacters = getPreference("Special Characters");
 
+if (upperCase === false && lowerCase === false && numbers === false && specialCharacters === false) {
+  window.alert("Attention: you must select Yes (1) for at least one character preference in a password")
+  writePassword();
+}
 
+else {
 
 console.log(generatePassword(length, upperCase, lowerCase, numbers, specialCharacters));
+
+var password = generatePassword(length, upperCase, lowerCase, numbers, specialCharacters);
 
 // var password = generatePassword();
 var passwordText = document.querySelector("#password");
@@ -100,5 +109,6 @@ passwordText.value = password;
 
 }
 
+}
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
