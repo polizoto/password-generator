@@ -89,6 +89,8 @@ var lowerCase = getPreference("Lowercase Letters");
 var numbers = getPreference("Numbers");
 var specialCharacters = getPreference("Special Characters");
 
+
+
 console.log(generatePassword(length, upperCase, lowerCase, numbers, specialCharacters));
 
 // var password = generatePassword();
