@@ -30,6 +30,51 @@ var getPreference = function(item) {
     return choice;
   }
 }
+
+// Get String based on user preference
+var getString = function(myString, string) {
+    buildString = myString;
+    for ( var i = 0; i < string.length; i++ ) {
+      var letter = string.charAt(i)
+      buildString = buildString.concat(letter);
+    }
+    characters = buildString;
+    return characters;
+  }
+
+// Generate password based on user preference
+var generatePassword = function(long, upper, lower, number, special) {
+
+  var characters = '';
+  if (upper === true) {
+    var upCharacters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    var characters = getString(characters, upCharacters);
+  }
+
+  if (lower === true) {
+    var lowCharacters = "abcdefghijklmnopqrstuvwxyz";
+    var characters = getString(characters, lowCharacters);
+  }
+
+  if (number === true) {
+    var nums = "0123456789";
+    var characters = getString(characters, nums);
+  }
+
+  if (special === true) {
+    var specCharacters = " !\"#$%&'()*+,-./:;<=>?@[\\\]^_`{|}~";
+    var characters = getString(characters, specCharacters);
+  }
+
+  var result = '';
+  var charactersLength = characters.length;
+  for ( var i = 0; i < long; i++ ) {
+      result += characters.charAt(Math.floor(Math.random() * 
+ charactersLength));
+   }
+   return result;
+}
+
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
@@ -38,10 +83,13 @@ function writePassword() {
 getLength(); 
 
 // Call Preference function for different types of chracters and store as global variable
+
 var upperCase = getPreference("Uppercase Letters");
 var lowerCase = getPreference("Lowercase Letters");
 var numbers = getPreference("Numbers");
 var specialCharacters = getPreference("Special Characters");
+
+console.log(generatePassword(length, upperCase, lowerCase, numbers, specialCharacters));
 
 // var password = generatePassword();
 var passwordText = document.querySelector("#password");
